@@ -41,8 +41,8 @@ namespace ConsoleAppClassBuilding
         public int AreaPerPerson()
         {
             
-            int areaPerPerson = (Area*Floors) / Occupants;
-            return areaPerPerson;
+            return (Area*Floors) / Occupants;
+            
         }
     }
 }
