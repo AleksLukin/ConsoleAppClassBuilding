@@ -11,14 +11,21 @@ namespace ConsoleAppClassBuilding
         static void Main(string[] args)
         {
             Building house = new Building();
-
-            int quntityHouseAreaPerPerson = house.AreaPerPerson(60, 5, 2);
+            house.Area = 160;
+            house.Occupants = 4;
+            house.Floors = 2;
+            
+            int quntityHouseAreaPerPerson = house.AreaPerPerson();
             Console.WriteLine("Количество площади в доме на 1 жильца равно " + quntityHouseAreaPerPerson + " кв.м.");
 
             Console.WriteLine();
 
             Building office = new Building();
-            int quntityOfficeAreaPerPerson = office.AreaPerPerson(120, 24, 5);
+            office.Area = 320;
+            office.Occupants = 8;
+            office.Floors = 4;
+
+            int quntityOfficeAreaPerPerson = office.AreaPerPerson();
             Console.WriteLine("Количество площади в oфисе на 1 служащего равно " + quntityOfficeAreaPerPerson + " кв.м.");
 
             Console.ReadLine();
@@ -27,12 +34,15 @@ namespace ConsoleAppClassBuilding
     }
     class Building
     {
+        public int Area;
+        public int Occupants;
+        public int Floors;
 
-        public int AreaPerPerson(int area, int occupants, int floors)
+        public int AreaPerPerson()
         {
-
-            int areaPerPerson = (area*floors) / occupants;
-            return areaPerPerson;
+            
+            return (Area*Floors) / Occupants;
+            
         }
     }
 }
